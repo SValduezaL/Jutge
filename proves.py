@@ -1,31 +1,21 @@
-import math 
+import turtle
 
-print (int(79.44 + 99.26))
-print (int(26 / 40))
-print (float("3.14"))
-print (int(47 == 47))
-print (((95 +35) // 2))
-print (str(math.pi))
-print ()
+def corba_Koch(m: float, n:int) -> None:
+    ''' Dibuixa la corba de Koch per una determinada mida m i n nombre de nivells. '''
+    
+    if  n == 0:
+        turtle.forward(m)
+    else:
+        corba_Koch(m/3, n-1)
+        turtle.left(60)
+        corba_Koch(m/3, n-1)
+        turtle.right(120)
+        corba_Koch(m/3, n-1)
+        turtle.left(60)
+        corba_Koch(m/3, n-1)
 
-string = True
-print (string, type(string))
-string = ""
-print (string, type(string))
-string = 'X'
-print (string, type(string))
-string = "'No em marquis'"
-print (string, type(string))
-string = "Jordi"
-print (string, type(string))
-string = str(math.pi)
-print (string, type(string))
-string = False
-print (string, type(string))
-string = 'Jordi'
-print (string, type(string))
-string = 12
-print (string, type(string))
-print ()
+def main():
+    corba_Koch(200, 2)
 
-print (63 == 63)
+if __name__ == '__main__':
+    main()
